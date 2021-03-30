@@ -14,12 +14,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorIntl } from '@angular/material/paginator';
 
 import { ListagemComponent } from './components';
 import { LancamentoComponent } from './components';
 import { FuncionarioComponent } from './components';
 
+import { HttpUtilService, LancamentoService, PtBrMatPaginatorIntl } from '../shared';
 
+import { SharedModule } from '../shared';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,13 @@ import { FuncionarioComponent } from './components';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCardModule
+    MatCardModule,
+    SharedModule
+  ],
+  providers: [
+    HttpUtilService,
+    LancamentoService,
+    {provide: MatPaginatorIntl, useClass: PtBrMatPaginatorIntl }
   ]
 })
 export class FuncionarioModule { }
