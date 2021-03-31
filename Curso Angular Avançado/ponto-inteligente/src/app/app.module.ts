@@ -14,6 +14,7 @@ import { CadastroPfModule } from './autenticacao';
 import { CadastroPfRoutingModule } from './autenticacao';
 import { FuncionarioModule } from './funcionario';
 import { FuncionarioRoutingModule } from './funcionario';
+import { AdminModule } from './admin';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { FuncionarioRoutingModule } from './funcionario';
     CadastroPfRoutingModule,
     FuncionarioModule,
     FuncionarioRoutingModule,
+    AdminModule,
 
+    
     AppRoutingModule
   ],
   providers: [
